@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="FF.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:Highlight">
+    <form id="form1" runat="server">
+        <div>
+            <asp:Menu ID="Menu1" BorderStyle="Solid" CssClass="nav" runat="server" BackColor="#66FF33" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Large" ForeColor="#0066FF" Height="50px" Orientation="Horizontal" RenderingMode="Table" StaticSubMenuIndent="10px" ViewStateMode="Enabled" Width="1200px">
+                <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#E3EAEB" />
+                <DynamicSelectedStyle BackColor="#1C5E55" />
+                <DynamicItemTemplate>
+                    <%# Eval("Text") %>
+                </DynamicItemTemplate>
+                <Items>
+                    <asp:MenuItem Text="登录首页" Value="登录首页" NavigateUrl="~/Default.aspx">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="查询朋友信息" Value="查询朋友信息">
+                        <asp:MenuItem Text="手机号码查询" Value="手机号码查询" NavigateUrl="~/CkFnum.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="姓名查询" Value="姓名查询" NavigateUrl="~/CkFname.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="好友管理" Value="好友管理" NavigateUrl="~/FredManage.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="添加好友" Value="添加好友" NavigateUrl="~/AddFred.aspx">
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="用户操作" Value="用户操作">
+                        <asp:MenuItem Text="修改密码" Value="修改密码" NavigateUrl="~/userChangePwd.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="用户管理" Value="用户管理" NavigateUrl="~/UserManage.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="登出" Value="登出" NavigateUrl="~/login.aspx"></asp:MenuItem>
+                </Items>
+                <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticMenuStyle BorderColor="Red" />
+                <StaticSelectedStyle BackColor="#1C5E55" />
+            </asp:Menu>
+            <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
